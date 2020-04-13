@@ -29,6 +29,7 @@ export const Tasks = () => {
     return (
         /*  ##Note : data-testid for component testing*/
         <div className="tasks" data-testid="tasks">
+            
             <h2 data-testid="project-name">{projectName}</h2>
 
             <ul className="tasks__list">
@@ -36,7 +37,7 @@ export const Tasks = () => {
                     <li key={`${task.id}`}>
                         <CheckBox id={task.id} />
                         <span>{task.task}</span>
-                    </li>
+                    </li>   
                 ))}
             </ul>
 

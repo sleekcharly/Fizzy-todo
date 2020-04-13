@@ -7,7 +7,7 @@
     
     // create provider
     export const SelectedProjectProvider = ({children}) => {
-        const [ selectedProject, setSelectedProject ] = useState('INBOX');
+        const [ selectedProject, setSelectedProject ] = useState('TODAY');
     
         return (
             <SelectedProjectContext.Provider value={{selectedProject, setSelectedProject }}>

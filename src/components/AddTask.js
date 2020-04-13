@@ -31,7 +31,7 @@ export const AddTask = ({
             collatedDate = moment()
                 .add(7, 'days')
                 .format('DD/MM/YYYY');
-        }
+        } 
 
         return (
             task &&
