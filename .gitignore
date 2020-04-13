@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 .eslintrc.json
+.env.development
+.env.production
 
 # testing
 /coverage

@@ -2,7 +2,7 @@ import firebase from 'firebase/app';
 import 'firebase/firestore';
 
 const firebaseConfig = firebase.initializeApp({
-    apiKey: "AIzaSyByIW5altjF6JpnuXKPlpxr094dWOGumYY",
+    apiKey: process.env.firebase_key,
     authDomain: "fizzy-todo.firebaseapp.com",
     databaseURL: "https://fizzy-todo.firebaseio.com",
     projectId: "fizzy-todo",
