@@ -43,7 +43,7 @@ const Tasks = (props: Props) => {
       <ul className="tasks__list">
         {tasks.map((task: any) => (
           <li key={`${task.id}`}>
-            <Checkbox id={task.id} />
+            <Checkbox id={task.id} taskDesc={task.task} />
             <span>{task.task}</span>
           </li>
         ))}

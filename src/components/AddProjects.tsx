@@ -48,9 +48,13 @@ const AddProjects = ({ shouldShow = false }: Props) => {
             Add Project
           </button>
           <span
+            aria-label="Cancel adding project"
             data-testid="hide-project-overlay"
             className="add-project__cancel"
             onClick={() => setShow(false)}
+            onKeyDown={() => setShow(false)}
+            role="button"
+            tabIndex={0}
           >
             Cancel
           </span>
@@ -59,9 +63,13 @@ const AddProjects = ({ shouldShow = false }: Props) => {
 
       <span className="add-project__plus">+</span>
       <span
+        aria-label="Add Project"
         data-testid="add-project-action"
         className="add-project__text"
         onClick={() => setShow(!show)}
+        onKeyDown={() => setShow(!show)}
+        role="button"
+        tabIndex={0}
       >
         Add Project
       </span>

@@ -7,7 +7,7 @@ import Header from './components/layout/Header';
 import { ProjectsProvider, SelectedProjectProvider } from './context';
 
 type Prop = {
-  darkModeDefault: boolean;
+  darkModeDefault?: boolean;
 };
 
 export const App = ({ darkModeDefault = false }: Prop) => {

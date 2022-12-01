@@ -40,6 +40,9 @@ const IndividualProject = ({ project }: Props) => {
         data-testid="delete-project"
         onKeyDown={() => setShowConfirm(!showConfirm)}
         onClick={() => setShowConfirm(!showConfirm)}
+        role="button"
+        tabIndex={0}
+        aria-label="Confirm deletion of project"
       >
         <FaTrashAlt />
         {showConfirm && (
@@ -49,11 +52,20 @@ const IndividualProject = ({ project }: Props) => {
               <button
                 type="button"
                 onClick={() => deleteProject(project.docId)}
+                onKeyDown={() => deleteProject(project.docId)}
               >
                 Delete
               </button>
 
-              <span onClick={() => setShowConfirm(!showConfirm)}>Cancel</span>
+              <span
+                onClick={() => setShowConfirm(!showConfirm)}
+                onKeyDown={() => setShowConfirm(!showConfirm)}
+                role="button"
+                tabIndex={0}
+                aria-label="cancel delete project"
+              >
+                Cancel
+              </span>
             </div>
           </div>
         )}

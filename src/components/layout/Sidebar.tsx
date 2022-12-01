@@ -28,7 +28,14 @@ const Sidebar = (props: Props) => {
           className={active === 'inbox' ? 'active' : undefined}
         >
           <div
+            aria-label="show inbox tasks"
+            role="button"
+            tabIndex={0}
             onClick={() => {
+              setActive('inbox');
+              setSelectedProject('INBOX');
+            }}
+            onKeyDown={() => {
               setActive('inbox');
               setSelectedProject('INBOX');
             }}
@@ -44,7 +51,14 @@ const Sidebar = (props: Props) => {
           className={active === 'today' ? 'active' : undefined}
         >
           <div
+            aria-label="show today's tasks"
+            role="button"
+            tabIndex={0}
             onClick={() => {
+              setActive('today');
+              setSelectedProject('TODAY');
+            }}
+            onKeyDown={() => {
               setActive('today');
               setSelectedProject('TODAY');
             }}
@@ -60,7 +74,14 @@ const Sidebar = (props: Props) => {
           className={active === 'next_7' ? 'active' : undefined}
         >
           <div
+            aria-label="Show tasks for next 7 days"
+            role="button"
+            tabIndex={0}
             onClick={() => {
+              setActive('next_7');
+              setSelectedProject('NEXT_7');
+            }}
+            onKeyDown={() => {
               setActive('next_7');
               setSelectedProject('NEXT_7');
             }}
@@ -75,7 +96,11 @@ const Sidebar = (props: Props) => {
       {/* middlesection of sidebar */}
       <div
         className="sidebar__middle"
+        aria-label="Show/Hide Projects"
         onClick={() => setShowProjects(!showProjects)}
+        onKeyDown={() => setShowProjects(!showProjects)}
+        role="button"
+        tabIndex={0}
       >
         <span>
           <FaChevronDown

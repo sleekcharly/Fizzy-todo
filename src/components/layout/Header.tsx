@@ -27,22 +27,31 @@ const Header = ({ darkMode, setDarkMode }: Props) => {
         </div>
         <div className="settings">
           <ul>
-            <li
-              data-testid="quick-add-task-action"
-              className="settings__add"
-              onClick={() => {
-                setShowQuickAddTask(true);
-                setShouldShowMain(true);
-              }}
-            >
-              +
+            <li data-testid="quick-add-task-action" className="settings__add">
+              <button
+                aria-label="Quick Add Task"
+                type="button"
+                onClick={() => {
+                  setShowQuickAddTask(true);
+                  setShouldShowMain(true);
+                }}
+                onKeyDown={() => {
+                  setShowQuickAddTask(true);
+                  setShouldShowMain(true);
+                }}
+              >
+                +
+              </button>
             </li>
-            <li
-              data-testid="dark-mode-action"
-              className="settings__darkmode"
-              onClick={() => setDarkMode(!darkMode)}
-            >
-              <FaPizzaSlice />
+            <li data-testid="dark-mode-action" className="settings__darkmode">
+              <button
+                aria-label="DarkMode on/off"
+                type="button"
+                onClick={() => setDarkMode(!darkMode)}
+                onKeyDown={() => setDarkMode(!darkMode)}
+              >
+                <FaPizzaSlice />
+              </button>
             </li>
           </ul>
         </div>
@@ -50,7 +59,7 @@ const Header = ({ darkMode, setDarkMode }: Props) => {
 
       <AddTask
         showAddTaskMain={false}
-        shouldShowMain={shouldShowMain}
+        showShouldMain={shouldShowMain}
         showQuickAddTask={showQuickAddTask}
         setShowQuickAddTask={setShowQuickAddTask}
       />

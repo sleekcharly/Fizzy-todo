@@ -28,7 +28,9 @@ const Projects = ({ activeValue = null }: Props) => {
         }
       >
         <div
-          data-testid="project-action"
+          role="button"
+          tabIndex={0}
+          aria-label={`Select ${project.name} as the task project`}
           onKeyDown={() => {
             setActive(project.projectId);
             setSelectedProject(project.projectId);

@@ -27,13 +27,19 @@ const ProjectOverlay = ({
               name: string;
               projectId: React.Key | string | null | undefined;
             }) => (
-              <li key={project.projectId}>
+              <li key={project.projectId} data-testid="project-overlay-action">
                 <div
-                  data-testid="project-overlay-action"
                   onClick={() => {
                     setProject(project.projectId);
                     setShowProjectOverlay(false);
                   }}
+                  onKeyDown={() => {
+                    setProject(project.projectId);
+                    setShowProjectOverlay(false);
+                  }}
+                  role="button"
+                  tabIndex={0}
+                  aria-label="Select the task project"
                 >
                   {project.name}
                 </div>
